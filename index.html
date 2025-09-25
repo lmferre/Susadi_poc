@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chosen Palette: SUSADI Institucional --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Application Structure Plan: Se diseñó una estructura de "scrollytelling" (narrativa vertical) en una sola página. El flujo guía al usuario desde el problema (el caos de los datos), pasando por el proceso de solución (los 3 pasos), la transformación visual (antes y después), el impacto cuantificado (KPIs), la exploración interactiva (enlace a Tableau) y las recomendaciones futuras. Se eligió esta estructura lineal porque es la forma más intuitiva y clara de contar una historia con un principio, un desarrollo y un final, facilitando la comprensión para una audiencia no técnica y manteniendo el enfoque en el mensaje clave en cada sección. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Visualization &amp; Content Choices:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Título: Texto gradiente para impacto visual. Goal: Informar. Method: HTML/CSS.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Problemas: Rejilla de 4 tarjetas con emojis. Goal: Organizar. Interaction: Ninguna. Justification: Los emojis son un sustituto simple y sin SVG para los iconos, y la rejilla presenta la información de forma clara y comparable. Method: HTML/Tailwind.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Proceso: Diagrama de flujo de 3 pasos. Goal: Organizar. Interaction: Ninguna. Justification: Un flexbox simple con flechas de texto (➔) es suficiente para ilustrar un proceso lineal sin necesidad de librerías. Method: HTML/Tailwind.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Antes/Después: Comparativa de dos columnas con texto preformateado. Goal: Comparar. Interaction: Ninguna. Justification: La forma más directa de mostrar el valor del trabajo de estructuración. Method: HTML/Tailwind.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Impacto: 3 tarjetas de KPIs con números grandes. Goal: Informar. Interaction: Ninguna. Justification: Técnica de infografía clásica para resaltar métricas clave. Method: HTML/Tailwind.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Dashboard: Botón de enlace al dashboard externo. Goal: Explorar. Interaction: Clic para abrir nueva pestaña. Justification: Mantiene la infografía ligera y rápida, delegando la exploración de datos profunda a la herramienta especializada (Tableau), como solicitó el usuario. Method: HTML.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Recomendaciones: Rejilla de tarjetas de texto. Goal: Informar/Organizar. Interaction: Ninguna. Justification: Presenta una lista larga de recomendaciones de forma visualmente ordenada y fácil de digerir. Method: HTML/Tailwind.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Infografía SUSADI - Datos Abiertos de Salud en Uruguay&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gradient-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(to right, #2A4B8B, #00A99D);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flow-arrow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00A99D;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.kpi-card {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">             </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>border-left: 5px solid #00A99D;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.action-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #2A4B8B;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: background-color 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.action-button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1d3557;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="text-gray-800"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="container mx-auto p-4 md:p-8"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="text-center my-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-4xl md:text-6xl font-black gradient-text mb-4"&gt;Del Caos a la Claridad&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"&gt;La odisea de transformar los datos abiertos de salud en Uruguay en un recurso para la toma de decisiones.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="mt-4 text-sm font-semibold text-gray-500"&gt;Un proyecto del Grupo de Trabajo “Datos y Analítica de Datos” de SUSADI&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="challenge" class="my-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold text-gray-900"&gt;El Potencial Oculto y el Desafío Real&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto"&gt;Los datos públicos de salud existen, pero usarlos para análisis es como intentar leer un libro con las páginas desordenadas.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-lg shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl text-red-500 mb-3"&gt;⚠️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2"&gt;Estructuras para Ver, no para Analizar&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 text-sm"&gt;Formatos con celdas combinadas y múltiples hojas que impiden el procesamiento automático.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-lg shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl text-yellow-500 mb-3"&gt;🔄&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2"&gt;Nombres y Códigos Inconsistentes&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 text-sm"&gt;La misma institución aparecía con múltiples nombres, dificultando el seguimiento y la comparación.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-lg shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl" style="color: #2A4B8B;" mb-3&gt;🚫&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2"&gt;Saltos en el Tiempo y Vacíos&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 text-sm"&gt;Discontinuidades en los registros anuales que complican el análisis de tendencias a largo plazo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-lg shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl text-gray-500 mb-3"&gt;❓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2"&gt;Sin "Manual de Instrucciones"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 text-sm"&gt;Falta de metadatos y diccionarios que expliquen qué significa cada variable, su origen y alcance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="process" class="my-20 bg-gray-50 py-16 rounded-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold text-gray-900"&gt;Nuestra Misión: Ordenar la Biblioteca&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto"&gt;Adoptamos un enfoque metódico para convertir datos inutilizables en un activo valioso y reutilizable.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white rounded-full h-24 w-24 flex items-center justify-center shadow-lg border-4" style="border-color: #A8DADC;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-4xl"&gt;1️⃣&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold mt-4"&gt;Selección Estratégica&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600 max-w-xs"&gt;Identificamos 2 datasets clave del MSP con alto potencial analítico.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flow-arrow transform md:rotate-0 rotate-90"&gt;➔&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div class="bg-white rounded-full h-24 w-24 flex items-center justify-center shadow-lg border-4" style="border-color: #457B9D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-4xl"&gt;2️⃣&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold mt-4"&gt;Limpieza y Estandarización&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600 max-w-xs"&gt;Unificamos nombres de instituciones y normalizamos formatos de fecha a ISO.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flow-arrow transform md:rotate-0 rotate-90"&gt;➔&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div class="text-center flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div class="bg-white rounded-full h-24 w-24 flex items-center justify-center shadow-lg border-4" style="border-color: #2A4B8B;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-4xl"&gt;3️⃣&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold mt-4"&gt;Reestructuración a "Tidy"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600 max-w-xs"&gt;Convertimos las tablas a un formato ordenado: 1 fila por observación, 1 columna por variable.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="transformation" class="my-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold text-gray-900"&gt;La Transformación: Antes y Después&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto"&gt;Visualiza la diferencia entre una estructura pensada para imprimir y una diseñada para analizar.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6 bg-white rounded-lg shadow-lg border-t-4 border-red-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-center text-xl font-bold mb-4 text-red-700"&gt;ANTES: Datos Caóticos&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-center text-sm text-gray-600 mb-4"&gt;Múltiples tablas, celdas combinadas y años en columnas. Imposible para un programa leerlo correctamente.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="font-mono text-xs bg-red-50 p-4 rounded-md overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-red-800"&gt;[Hoja: 2020]&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;&amp;gt; Institución A | Afiliados | ... |&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;&amp;gt; Institución B | 15000 | ... |&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-red-800"&gt;[Hoja: 2021]&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;&amp;gt; Institucion A | 12500 | ... |&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;&amp;gt; Instit. B | 15200 | ... |&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6 bg-white rounded-lg shadow-lg border-t-4" style="border-color: #2A4B8B;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;h3 class="text-center text-xl font-bold mb-4" style="color: #2A4B8B;"&gt;DESPUÉS: Datos "Tidy"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;p class="text-center text-sm text-gray-600 mb-4"&gt;Una única tabla relacional, limpia y lista para ser analizada, visualizada y reutilizada.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div class="font-mono text-xs p-4 rounded-md overflow-x-auto" style="background-color: #EBF2FA;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p style="color: #1d3557;"&gt;| institucion_id | anio | afiliados |&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;|------------------|------|-----------|&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;| institucion_a<span class="Apple-converted-space">    </span>| 2020 | 12345 <span class="Apple-converted-space">    </span>|&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;| institucion_b<span class="Apple-converted-space">    </span>| 2020 | 15000 <span class="Apple-converted-space">    </span>|&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;| institucion_a<span class="Apple-converted-space">    </span>| 2021 | 12500 <span class="Apple-converted-space">    </span>|&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;| institucion_b<span class="Apple-converted-space">    </span>| 2021 | 15200 <span class="Apple-converted-space">    </span>|&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="impact" class="my-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold text-gray-900"&gt;El Impacto: De Datos Inertes a Conocimiento Activo&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto"&gt;Este trabajo no solo limpia datos, sino que desbloquea un valor inmenso para todo el ecosistema de salud.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="kpi-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold text-gray-800 mb-2"&gt;Ahorro de Tiempo y Recursos&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-5xl font-black" style="color: #2A4B8B;"&gt;80%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600 mt-2"&gt;Reducción estimada del tiempo que un analista dedica a la limpieza de datos antes de poder empezar a investigar.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="kpi-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold text-gray-800 mb-2"&gt;Mejora de la Confianza&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-5xl font-black" style="color: #2A4B8B;"&gt;95%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600 mt-2"&gt;Nivel de estandarización alcanzado en los nombres de instituciones, permitiendo análisis más robustos y fiables.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div class="kpi-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold text-gray-800 mb-2"&gt;Democratización del Acceso&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-5xl font-black" style="color: #2A4B8B;"&gt;10x&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600 mt-2"&gt;Potencial de aumento en la reutilización de los datos al estar en un formato accesible y listo para usar.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white p-6 md:p-8 rounded-lg shadow-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;h3 class="text-xl font-bold text-center mb-1 text-gray-900"&gt;Visualizando el Potencial en Acción&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;p class="text-center text-sm text-gray-600 mb-6"&gt;Explora los datos de forma interactiva. Haz clic en el botón para abrir nuestro dashboard en una nueva pestaña.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://public.tableau.com/app/profile/mathias.ferre/viz/SUSADI/AnlisisSalud?publish=yes" target="_blank" rel="noopener noreferrer" class="action-button mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Abrir Dashboard Interactivo</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="future" class="my-20 text-white py-16 rounded-xl" style="background-color: #1d3557;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold"&gt;El Futuro es Abierto y Estructurado&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mt-2 text-md text-gray-300 max-w-2xl mx-auto"&gt;Nuestras recomendaciones para fortalecer el ecosistema de datos de salud en Uruguay.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-5 rounded-lg border-l-4" style="background-color: #2A4B8B; border-color: #00A99D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2" style="color: #A8DADC;"&gt;1. Publicar en Formato "Tidy"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;Priorizar la estructura para análisis. Una variable por columna, una observación por fila.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-5 rounded-lg border-l-4" style="background-color: #2A4B8B; border-color: #00A99D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2" style="color: #A8DADC;"&gt;2. Incluir "Diccionarios" de Datos&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;Acompañar cada dataset con metadatos claros que describan cada variable, su origen y significado.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div class="p-5 rounded-lg border-l-4" style="background-color: #2A4B8B; border-color: #00A99D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2" style="color: #A8DADC;"&gt;3. Estandarizar Nombres y Códigos&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;Utilizar identificadores únicos y consistentes para facilitar la vinculación entre datasets.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-5 rounded-lg border-l-4" style="background-color: #2A4B8B; border-color: #00A99D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2" style="color: #A8DADC;"&gt;4. Mantener Trazabilidad y Versionado&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;Indicar la versión del dataset y los cambios respecto a versiones anteriores. Usar nombres de archivo claros.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-5 rounded-lg border-l-4" style="background-color: #2A4B8B; border-color: #00A99D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2" style="color: #A8DADC;"&gt;5. Documentar el Proceso de Producción&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;Explicar cómo se originaron los datos y si fueron modificados, imputados o agregados.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-5 rounded-lg border-l-4" style="background-color: #2A4B8B; border-color: #00A99D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2" style="color: #A8DADC;"&gt;6. Facilitar el Acceso Programático&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;Publicar datos en repositorios accesibles por URL (GitHub, CKAN) y considerar el uso de APIs.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-5 rounded-lg border-l-4 lg:col-span-2" style="background-color: #2A4B8B; border-color: #00A99D;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-lg mb-2" style="color: #A8DADC;"&gt;7. Incluir Ejemplos y Guías de Uso&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;Ofrecer notebooks o scripts (ej. en R o Python) que demuestren cómo cargar y trabajar con los datos para reducir la barrera de entrada a nuevos usuarios.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer class="text-center py-12 border-t"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-2xl font-bold gradient-text"&gt;La salud digital la construimos entre todos.&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-600 mt-2"&gt;Este es un proyecto del Grupo de Trabajo de Datos y Analítica de Datos de SUSADI.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-500 text-sm mt-4"&gt;Fernando Cormenzana, Marina Ridao, Mathias Ferre, Camila Goldman, Bruno Demoro, Alvaro Sanchez&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// No script needed for this version.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

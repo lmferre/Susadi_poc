@@ -153,10 +153,10 @@
                      <div class="font-mono text-xs p-4 rounded-md overflow-x-auto" style="background-color: #EBF2FA;">
                         <p style="color: #1d3557;">| institucion_id | anio | afiliados |</p>
                         <p>|------------------|------|-----------|</p>
-                        <p>| institucion_a    | 2020 | 12345     |</p>
-                        <p>| institucion_b    | 2020 | 15000     |</p>
-                        <p>| institucion_a    | 2021 | 12500     |</p>
-                        <p>| institucion_b    | 2021 | 15200     |</p>
+                        <p>| institucion_a    | 2020 | 12345     |</p>
+                        <p>| institucion_b    | 2020 | 15000     |</p>
+                        <p>| institucion_a    | 2021 | 12500     |</p>
+                        <p>| institucion_b    | 2021 | 15200     |</p>
                      </div>
                 </div>
             </div>
@@ -185,8 +185,19 @@
                 </div>
             </div>
             <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl text-center">
-                 <h3 class="text-xl font-bold text-center mb-1 text-gray-900">Visualizando el Potencial en Acción</h3>
-                 <p class="text-center text-sm text-gray-600 mb-6">Explora los datos de forma interactiva. Haz clic en el botón para abrir nuestro dashboard en una nueva pestaña.</p>
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <h3 class="text-xl font-bold text-center text-gray-900">Visualizando el Potencial en Acción</h3>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://public.tableau.com/app/profile/mathias.ferre/viz/SUSADI/AnlisisSalud?publish=yes" alt="Código QR para acceder al dashboard" class="w-40 h-40 rounded-md shadow-sm">
+                </div>
+                 <p class="text-center text-sm text-gray-600 mb-6">Escanea el código QR o haz clic en las imágenes para explorar los datos de forma interactiva en una nueva pestaña.</p>
+                 <div class="my-4 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <a href="https://public.tableau.com/app/profile/mathias.ferre/viz/SUSADI/AnlisisSalud?publish=yes" target="_blank" rel="noopener noreferrer" class="block border-4 border-gray-200 rounded-lg overflow-hidden hover:border-indigo-500 transition-all duration-300 shadow-lg">
+                        <img src="https://raw.githubusercontent.com/lmferre/Susadi_poc/main/Img1.jpg" alt="Previsualización del Dashboard de Tableau 1" class="w-full h-auto object-cover">
+                    </a>
+                    <a href="https://public.tableau.com/app/profile/mathias.ferre/viz/SUSADI/AnlisisSalud?publish=yes" target="_blank" rel="noopener noreferrer" class="block border-4 border-gray-200 rounded-lg overflow-hidden hover:border-indigo-500 transition-all duration-300 shadow-lg">
+                        <img src="https://raw.githubusercontent.com/lmferre/Susadi_poc/main/Img2.jpg" alt="Previsualización del Dashboard de Tableau 2" class="w-full h-auto object-cover">
+                    </a>
+                </div>
                 <a href="https://public.tableau.com/app/profile/mathias.ferre/viz/SUSADI/AnlisisSalud?publish=yes" target="_blank" rel="noopener noreferrer" class="action-button mt-4">
                     Abrir Dashboard Interactivo
                 </a>
@@ -242,3 +253,6 @@
     </script>
 </body>
 </html>
+
+
+
